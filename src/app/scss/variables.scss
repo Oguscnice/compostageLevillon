@@ -1,0 +1,93 @@
+// ----- height-footer-and-header;
+:root {
+  --height-footer: 0px;
+  --height-header: 0px;
+  --height-booktique-page: 0px;
+  --height-booktique-section-monitored: 0px;
+  --height-img-monitored: 0px;
+  --width-img-monitored: 0px;
+}
+
+// ----- color -----
+$white: #ffffff;
+$black: #000000;
+$green: rgb(108, 194, 27);
+$green-light: rgb(137, 242, 38);
+$green-dark: rgb(64, 116, 15);
+$green-light-opacity-low: rgba(137, 242, 38, 0.281);
+$orange : orange;
+$brown : brown;
+$yellow : yellow;
+$red : red;
+
+// ----- padding -----
+$normal-padding: 8px;
+$double-padding: 2 * $normal-padding;
+$triple-padding: 3 * $normal-padding;
+$fourth-padding: 4 * $normal-padding;
+$half-padding: calc($normal-padding / 2);
+$tablet-padding: 16vw;
+$desktop-padding: 24vw;
+
+// ----- margin -----
+$normal-margin: 40px;
+$double-margin: 2 * $normal-margin;
+$triple-margin: 3 * $normal-margin;
+$fourth-margin: 4 * $normal-margin;
+$half-margin: calc($normal-margin / 2);
+
+// ----- border radius -----
+$border-radius: 8px;
+$half_openBorderRadius: 4px;
+$double-border-radius: 16px;
+
+// ----- border radiusfont sizeadius : 8px;
+$normal-font-size: 1rem;
+$double-font-size: 1.5 * $normal-font-size;
+$triple-font-size: 2 * $normal-font-size;
+$fourth-font-size: 3 * $normal-font-size;
+$max-font-size: 4 * $normal-font-size;
+$half-font-size: calc($normal-font-size / 2);
+
+// ----- height-h1-component;
+$mobile-h1-component: 240px;
+$desktop-h1-component: 480px;
+
+// ----- height-headband-yellow-black;
+$height-headband: 16px;
+
+$font-family-title: "Aladin", sans-serif;
+$font-family-text: "Helvetica", sans-serif;
+
+$z-index: 1;
+
+@mixin outline-picture {
+  border-radius: 8px;
+  border: 2px solid $green-dark;
+  box-shadow: 4px 4px 4px rgba($green-light, 0.8);
+  z-index: $z-index;
+}
+
+@mixin one-third-picture {
+  width: calc(100vw - (2 * $fourth-padding));
+  height: calc((100vw - (2 * $fourth-padding)) / 3);
+}
+
+
+@mixin text-shadow ($height, $color) {
+  text-shadow : 0 0 $height, $color, 0 0 $height, $color, 0 0 $height, $color,
+        0 0 $height, $color, 0 0 $height, $color, 0 0 $height, $color, 0 0 $height, $color,
+        0 0 $height, $color, 0 0 $height, $color, 0 0 $height, $color, 0 0 $height, $color,
+        0 0 $height, $color, 0 0 $height, $color, 0 0 $height, $color, 0 0 $height, $color,
+        0 0 $height, $color, 0 0 $height, $color, 0 0 $height, $color, 0 0 $height, $color,
+        0 0 $height, $color;
+} 
+
+@mixin inputStyleBorder {
+  background-color: #f5f5f5;
+  color: #242424;
+  outline: none;
+  border: none;
+  line-height: 1.15;
+  box-shadow: 0px 10px 20px -18px $green-dark;
+}

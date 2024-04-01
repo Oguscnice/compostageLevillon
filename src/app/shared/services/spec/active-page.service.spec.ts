@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ApiRequestsService } from './api-requests.service';
+import { ActivePageService } from '../active-page.service';
 
-describe('ApiRequestsService', () => {
-  let service: ApiRequestsService;
+describe('ActivePageService', () => {
+  let service: ActivePageService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ApiRequestsService);
+    service = TestBed.inject(ActivePageService);
   });
 
   it('should be created', () => {

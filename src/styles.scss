@@ -1,1 +1,334 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../src/app/scss/variables.scss";
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html {
+  // width: 100%;
+  scrollbar-color: transparent;
+}
+
+body {
+  overflow-x: hidden;
+  line-height: 1.2;
+  background-color: $green-light-opacity-low;
+}
+
+ol,
+ul {
+  z-index: $z-index + 1;
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ------ Flex Layouts ------ */
+.flex {
+  display: flex;
+  &.row {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0;
+  }
+  &.column {
+    flex-direction: column;
+  }
+  &.center {
+    align-items: center;
+    justify-content: center;
+  }
+  &.align-center {
+    align-items: center;
+  }
+  &.justify-center {
+    justify-content: center;
+  }
+  &.space-between {
+    justify-content: space-between;
+  }
+  &.space-around {
+    justify-content: space-around;
+  }
+  &.wrap {
+    flex-wrap: wrap;
+  }
+  &.text-left {
+    text-align: left;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.display-none {
+  display: none;
+}
+
+h1,
+h2 {
+  font-family: $font-family-title;
+  line-height: 1;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  margin: $normal-margin 0;
+  padding: 0 $normal-padding;
+}
+
+h1 {
+  font-size: $fourth-font-size;
+  color: $black;
+  letter-spacing: 0.4rem;
+}
+
+h2 {
+  font-size: $triple-font-size;
+  color: $green;
+  letter-spacing: 0.3rem;
+}
+
+h3 {
+  font-size: $triple-font-size;
+  letter-spacing: 0.2rem;
+}
+
+h4 {
+  font-size: $double-font-size;
+}
+
+p {
+  font-family: $font-family-text;
+  font-size: $double-font-size;
+  text-align: center;
+  line-height: 1.4em;
+}
+
+img {
+  object-fit: cover;
+  object-position: center;
+}
+.filter-color,
+h1 {
+  position: relative;
+}
+.filter-color {
+  background-color: rgba($brown, 0.2);
+}
+
+.visible-linear {
+  animation: appearLinear 2s linear forwards;
+}
+
+.invisible-linear {
+  animation: disappearLinear 1s linear forwards;
+}
+
+//pour la rotation des "+" aux formulaire de création
+i {
+  transition: all 0.4s linear;
+  color: $green;
+  font-size: $triple-font-size;
+}
+
+.rotated45 {
+  transform: rotate(45deg);
+}
+
+.rotated180 {
+  transform: rotate(180deg);
+}
+
+.mobile-only {
+  display: block;
+}
+
+.desktop-only {
+  display: none;
+}
+
+@keyframes appearLinear {
+  0% {
+    z-index: $z-index + 10;
+    opacity: 0;
+  }
+  100% {
+    z-index: $z-index + 10;
+    opacity: 1;
+  }
+}
+
+@keyframes disappearLinear {
+  0% {
+    z-index: $z-index + 10;
+    opacity: 1;
+  }
+  99%{
+    z-index: $z-index + 10;
+    opacity: 0;
+  }
+  100% {
+    z-index: $z-index - 1;
+  }
+}
+
+// cible l'élément juste après le router-outlet
+// (donc la page appelée)
+router-outlet + * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //hauteur minimum de toute la page, moins celle du header et footer, auquelle on ajoute leurs bordures de 1px
+  min-height: calc(100vh - (var(--height-header) + (var(--height-footer) + $normal-margin)));
+  margin : var(--height-header) auto 0 auto;
+}
+
+// Breackpoint list
+// Mobiles vers Tablettes :
+@media screen and (min-width: 768px) {
+  router-outlet + * {
+    max-width: 650px;
+  }
+}
+// Tablettes vers ordinateurs portables :
+@media screen and (min-width: 992px) {
+  router-outlet + * {
+    max-width: 800px;
+  }
+  p {
+    font-size: $normal-font-size;
+    text-align: left;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+  }
+}
+
+// Ordinateurs portables vers ordinateurs de bureau :
+@media screen and (min-width: 1400px) {
+  router-outlet + * {
+    max-width: 1000px;
+  }
+}

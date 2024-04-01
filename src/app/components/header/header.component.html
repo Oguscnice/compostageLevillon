@@ -1,1 +1,49 @@
-<p>header works!</p>
+<nav class="flex space-between center" #navBar>
+  <i class="fa-solid fa-leaf"></i>
+  <h3 class="flex"
+      [routerLink]="'/'">Compostage : Le Villon</h3>
+  <ul
+    class="flex center space-around"
+    [ngClass]="
+      isMenuBurgerChecked && !initialLoad
+        ? 'menu-burger-visible'
+        : !isMenuBurgerChecked && !initialLoad
+        ? 'menu-burger-hidden'
+        : '' ">
+    <li
+      *ngFor="let item of navbarUser; let index = index"
+      [routerLink]="item.submenu ? null : item.routerLink"
+      class="flex center column pointer"
+      [ngClass]="{
+        'active': item.routerLink === activePageService.activePage,
+        'separator': index !== navbarUser.length - 1 }"
+      (click)="item.submenu ?
+                openSubmenu(item) :
+                closeMenuBurger(menuCheckbox, item.routerLink, $event) ">
+      <p class="flex center"
+         [ngClass]="{
+          'active': item.routerLink === activePageService.activePage,
+          'submenu-close' : item.submenu && item.submenu.isOpen }">
+         {{ item.name }}
+      </p> 
+      <div 
+        class="flex center space-around submenu"
+        *ngIf="item.submenu"
+        [ngClass]="item.submenu.isOpen ? '' : 'close' ">
+        <a class="flex center"
+          *ngFor="let subItem of item.submenu.items"
+          [href]="item.routerLink + '#' + subItem.anchor"
+          (click)="closeMenuBurger(menuCheckbox, item.routerLink, $event)">
+          {{subItem.name}}
+        </a>
+      </div>
+    </li>
+  </ul>
+  <input type="checkbox" id="checkbox" #menuCheckbox (click)="changeMenuBurgerVisibility()" />
+  <label for="checkbox" class="toggle">
+    <div class="bars" id="bar1"></div>
+    <div class="bars" id="bar2"></div>
+    <div class="bars" id="bar3"></div>
+    <div class="bars" id="bar4"></div>
+  </label>
+</nav>
