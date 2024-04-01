@@ -1,0 +1,25 @@
+@import "../../scss/variables.scss";
+
+a {
+  color: $green-dark;
+}
+
+ul {
+  li {
+    ul {
+      list-style: inside;
+      li {
+        padding-left: $normal-padding;
+      }
+    }
+  }
+}
+
+iframe {
+  margin-top: $normal-margin;
+  @include outline-picture;
+  width: 80vw;
+  max-width: 400px;
+  height: 80vw;
+  max-height: 400px;
+}
