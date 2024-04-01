@@ -1,4 +1,4 @@
-<form action="https://formsubmit.io/send/guillaume.cometto@gmail.com"
+<form action="https://formsubmit.io/send/compostage.levillon@gmail.com"
       method="POST"
       class="flex center column"
       id="contactform">
@@ -13,7 +13,7 @@
             (keyup)="changeLastnameValue($event)">
             <label class="label">Nom...</label>
     </div>
-    <div class="errors" *ngIf="isFormClicked && hasErrors">
+    <div class="errors flex column" *ngIf="isFormClicked && hasErrors">
       <small *ngIf="lastnameValue && lastnameValue.length > 255">
         Le nom ne doit pas comporter plus de
         <strong>255 caractères</strong>.
@@ -39,7 +39,7 @@
               (keyup)="changeFirstnameValue($event)">
       <label class="label">Prénom...</label>
     </div>
-    <div class="errors" *ngIf="isFormClicked && hasErrors">
+    <div class="errors flex column" *ngIf="isFormClicked && hasErrors">
       <small *ngIf="firstnameValue && firstnameValue.length > 255">
         Le prénom ne doit pas comporter plus de
         <strong>255 caractères</strong>.
@@ -64,7 +64,7 @@
             (keyup)="changeEmailValue($event)">
       <label class="label">Email...</label>
     </div>
-    <div class="errors" *ngIf="isFormClicked && hasErrors">
+    <div class="errors flex column" *ngIf="isFormClicked && hasErrors">
       <small *ngIf="!validateEmail()">
         Renseigner un email au bon format
         <strong>bon format</strong>.
@@ -85,7 +85,7 @@
               (keyup)="changePhoneValue($event)">
       <label class="label">Téléphone...</label>
     </div>
-    <div class="errors" *ngIf="isFormClicked && hasErrors">
+    <div class="errors flex column" *ngIf="isFormClicked && hasErrors">
       <small *ngIf="validatePhone()">
         Merci d'entrer un numéro de téléphone à
         <strong>10 chiffres</strong>.</small
@@ -114,7 +114,7 @@
       </ul>
   </div>
 
-    <div class="errors" *ngIf="isFormClicked && hasErrors">
+    <div class="errors flex column" *ngIf="isFormClicked && hasErrors">
       <small *ngIf="themeValue === 'Selectionnez un thème'">
         Le thème est <strong>obligatoire</strong>.</small>
     </div>
@@ -125,13 +125,12 @@
       <textarea placeholder="Ex. Bonjour, je voudrais des informations sur..."
                 name="message"
                 id="message"
-                class="input"
                 (keyup)="changeMessageValue($event)">
       </textarea>
       <label class="label">Message...</label>
     </div>
 
-    <div class="errors" *ngIf="hasErrors && isFormClicked">
+    <div class="errors flex column" *ngIf="hasErrors && isFormClicked">
       <small *ngIf="messageValue && messageValue.length > 1000">
         Le message ne doit pas comporter plus de
         <strong>1000 caractères</strong>.
@@ -148,14 +147,12 @@
   </fieldset>
   <input name="_formsubmit_id" type="text" style="display: none" />
   <input name="_redirect"
-        type="hidden"
-        id="name"
-        value="/formulaire-envoye"/>
-  <button
-    [type]="checkErrors() ? 'submit' : 'button'"
-    (click)="changeSubmitted()"
-    class="btn-normal pointer submit" 
-  >
+         type="hidden"
+         id="name"
+         value="https://compostagelevillon.netlify.app/formulaire-envoye"/>
+  <button [type]="checkErrors() ? 'submit' : 'button'"
+          (click)="changeSubmitted()"
+          class="btn-normal pointer submit" >
     ENVOYER
   </button>
 </form>

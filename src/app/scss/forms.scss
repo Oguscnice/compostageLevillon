@@ -1,9 +1,11 @@
 @import "../scss/variables.scss";
+@import "../scss/buttons.scss";
 
 form {
-  fieldset {
 
+  fieldset {
     margin-bottom: 40px;
+
     .container {
       display: flex;
       flex-direction: column;
@@ -63,8 +65,24 @@ form {
 
   div {
     small {
+      margin-top: $half-margin;
+      max-width: 200px;
       color: $red;
     }
   }
 }
 
+textarea {
+  width: 200px;
+  height: 200px;
+  border: none;
+  outline: none;
+  padding: 0px 4px;
+  padding-top: 40px;
+  border-radius: 6px;
+  color: $green-dark;
+  font-size: 15px;
+  background-color: transparent;
+  box-shadow: 3px 3px 10px $black,
+  -1px -1px 6px $green;
+}

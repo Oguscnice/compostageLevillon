@@ -1,0 +1,28 @@
+@import "../scss/variables.scss";
+
+
+.btn-normal {
+  @include outline-picture;
+  background-color: $green-dark;
+  margin: $half-margin;
+  padding: $double-padding;
+  font-family: $font-family-text;
+  font-size: $normal-font-size;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 4px 4px 2px rgba($green, 0.8);
+  color: $white;
+  text-shadow: 0 0 0.7px $black, 0 0 0.7px $black, 0 0 0.7px $black,
+  0 0 0.7px $black, 0 0 0.7px $black, 0 0 0.7px $black, 0 0 0.7px $black,
+  0 0 0.7px $black, 0 0 0.7px $black, 0 0 0.7px $black, 0 0 0.7px $black,
+  0 0 0.7px $black, 0 0 0.7px $black, 0 0 0.7px $black, 0 0 0.7px $black,
+  0 0 0.7px $black, 0 0 0.7px $black, 0 0 0.7px $black, 0 0 0.7px $black,
+  0 0 0.7px $black;
+  transition: all 0.2s linear;
+}
+
+.btn-normal:hover {
+  @include outline-picture;
+  background-color: $green;
+  box-shadow: 4px 4px 2px rgba($green-dark, 0.8);
+}
