@@ -1,0 +1,163 @@
+<form action="https://formsubmit.io/send/guillaume.cometto@gmail.com"
+      method="POST"
+      class="flex center column"
+      id="contactform">
+  <h2>Formulaire de contact</h2>
+  <fieldset>
+    <div class="container">
+      <input required=""
+            type="text"
+            name="nom"
+            id="nom"
+            class="input"
+            (keyup)="changeLastnameValue($event)">
+            <label class="label">Nom...</label>
+    </div>
+    <div class="errors" *ngIf="isFormClicked && hasErrors">
+      <small *ngIf="lastnameValue && lastnameValue.length > 255">
+        Le nom ne doit pas comporter plus de
+        <strong>255 caractères</strong>.
+      </small>
+      <small *ngIf="lastnameValue && lastnameValue.length <= 2">
+        Le nom doit comporter plus de
+        <strong>2 caractères</strong>.
+      </small>
+      <small *ngIf="!lastnameValue">
+        Le nom est
+        <strong>obligatoire</strong>.
+      </small>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class="container">
+      <input required=""
+              type="text"
+              name="prenom"
+              id="prenom"
+              class="input"
+              (keyup)="changeFirstnameValue($event)">
+      <label class="label">Prénom...</label>
+    </div>
+    <div class="errors" *ngIf="isFormClicked && hasErrors">
+      <small *ngIf="firstnameValue && firstnameValue.length > 255">
+        Le prénom ne doit pas comporter plus de
+        <strong>255 caractères</strong>.
+      </small>
+      <small *ngIf="firstnameValue && firstnameValue.length <= 2">
+        Le prénom doit comporter plus de
+        <strong>2 caractères</strong>.
+      </small>
+      <small *ngIf="!firstnameValue">
+        Le prénom est
+        <strong>obligatoire</strong>.
+      </small>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="container">
+      <input required=""
+            type="text"
+            name="email"
+            id="email"
+            class="input"
+            (keyup)="changeEmailValue($event)">
+      <label class="label">Email...</label>
+    </div>
+    <div class="errors" *ngIf="isFormClicked && hasErrors">
+      <small *ngIf="!validateEmail()">
+        Renseigner un email au bon format
+        <strong>bon format</strong>.
+      </small>
+      <small *ngIf="!emailValue">
+        L'email est
+        <strong>obligatoire</strong>.
+      </small>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="container">
+      <input required=""
+              type="text"
+              name="telephone"
+              id="telephone"
+              class="input"
+              (keyup)="changePhoneValue($event)">
+      <label class="label">Téléphone...</label>
+    </div>
+    <div class="errors" *ngIf="isFormClicked && hasErrors">
+      <small *ngIf="validatePhone()">
+        Merci d'entrer un numéro de téléphone à
+        <strong>10 chiffres</strong>.</small
+      >
+      <small *ngIf="!phoneValue">
+        Le numéro de téléphone est <strong>obligatoire</strong>.</small
+      >
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="dropdown-container">
+      <div class="container">
+        <input required=""
+              readonly
+              type="text"
+              name="theme"
+              id="theme"
+              class="input"
+              (focus)="toggleDropdown()">
+        <label class="label"> {{ themeValue }} </label>
+      </div>
+      <ul class="items-list" [ngClass]="{'dropdown-visible': isDropdownOpen}">
+        <li (click)="changeThemeValue('Demande d`informations')">Demande d'informations</li>
+        <li (click)="changeThemeValue('Participation')">Participation</li>
+        <li (click)='changeThemeValue("Autre sujets")'>Autre sujets</li>
+      </ul>
+  </div>
+
+    <div class="errors" *ngIf="isFormClicked && hasErrors">
+      <small *ngIf="themeValue === 'Selectionnez un thème'">
+        Le thème est <strong>obligatoire</strong>.</small>
+    </div>
+  </fieldset>
+
+  <fieldset class="field-text-area">
+    <div class="container">
+      <textarea placeholder="Ex. Bonjour, je voudrais des informations sur..."
+                name="message"
+                id="message"
+                class="input"
+                (keyup)="changeMessageValue($event)">
+      </textarea>
+      <label class="label">Message...</label>
+    </div>
+
+    <div class="errors" *ngIf="hasErrors && isFormClicked">
+      <small *ngIf="messageValue && messageValue.length > 1000">
+        Le message ne doit pas comporter plus de
+        <strong>1000 caractères</strong>.
+      </small>
+      <small *ngIf="messageValue && messageValue.length <= 10">
+        Le message doit comporter plus de
+        <strong>10 caractères</strong>.
+      </small>
+      <small *ngIf="!messageValue">
+        Le message est
+        <strong>obligatoire</strong>.
+      </small>
+    </div>
+  </fieldset>
+  <input name="_formsubmit_id" type="text" style="display: none" />
+  <input name="_redirect"
+        type="hidden"
+        id="name"
+        value="http://localhost:4200/formulaire-envoye"/>
+  <button
+    [type]="checkErrors() ? 'submit' : 'button'"
+    (click)="changeSubmitted()"
+    class="btn-normal pointer submit" 
+  >
+    ENVOYER
+  </button>
+</form>
+
+<app-loader [booleanVisibilityInLoarder]="isLoaderVisible"></app-loader>
