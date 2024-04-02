@@ -1,17 +1,17 @@
-<form action="https://formsubmit.io/send/compostage.levillon@gmail.com"
+<form id="contactform"
+      action="https://formsubmit.io/send/compostage.levillon@gmail.com"
       method="POST"
-      class="flex center column"
-      id="contactform">
+      class="flex center column">
   <h2>Formulaire de contact</h2>
   <fieldset>
     <div class="container">
       <input required=""
-            type="text"
-            name="nom"
-            id="nom"
-            class="input"
-            (keyup)="changeLastnameValue($event)">
-            <label class="label">Nom...</label>
+             type="text"
+             name="nom"
+             id="nom"
+             class="input"
+             (keyup)="changeLastnameValue($event)">
+      <label class="label">Nom...</label>
     </div>
     <div class="errors flex column" *ngIf="isFormClicked && hasErrors">
       <small *ngIf="lastnameValue && lastnameValue.length > 255">
