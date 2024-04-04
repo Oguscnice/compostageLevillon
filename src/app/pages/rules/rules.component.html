@@ -1,1 +1,37 @@
 <h1>Les Bonnes Pratiques</h1>
+<div class="rules-cards flex space-between">
+  <button *ngFor="let rule of differentRules"
+          class="btn-normal"
+          [ngClass]="{'btn-active': sectionVisible === rule}"
+          (click)="changeVisibilitySection(rule)">
+    {{ rule }}
+  </button>
+</div>
+
+<section *ngIf="sectionVisible.includes('emploi')">
+  <h2>Mode d'emploi</h2>
+  <div *ngFor="let step of howToUse">
+    <h3> {{ step.phase }} </h3>
+    <img src="{{ step.picture }}">
+  </div>
+</section>
+
+<section *ngIf="sectionVisible === 'Je PEUX jeter'">
+  <h2 class="title good">OUI</h2>
+  <div class="flex wrap space-around">
+    <div class="picture-thumbnail" *ngFor="let item of canThrow">
+      <img [src]="item.isMealDb ? 'https://www.themealdb.com/images/ingredients/'+item.picture +'.png' : item.picture " alt="">
+      <p>{{ item.name }}</p>
+    </div>
+  </div>
+</section>
+
+<section *ngIf="sectionVisible === 'Je NE peux PAS jeter'">
+  <h2 class="title bad">NON</h2>
+  <div class="flex wrap space-around">
+    <div class="picture-thumbnail" *ngFor="let item of cantThrow">
+      <img [src]="item.isMealDb ? 'https://www.themealdb.com/images/ingredients/'+item.picture +'.png' : item.picture " alt="">
+      <p>{{ item.name }}</p>
+    </div>
+  </div>
+</section>

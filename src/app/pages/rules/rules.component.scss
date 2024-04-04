@@ -1,0 +1,47 @@
+@import "../../scss/buttons.scss";
+
+.rules-cards{
+  width: 100%;
+  .btn-normal{
+    background-color: $green;
+  }
+  .btn-normal:hover {
+    background-color: $green-light;
+  }
+  .btn-active {
+    background-color: $green-light-opacity-low;
+  }
+}
+
+section {
+  .title {
+    font-size: $fourth-font-size;
+    font-weight: bolder;
+  }
+  .bad {
+    color: $red;
+  }
+  div {
+    img {
+      max-width: 100%;
+    }
+    h2 {
+      font-size: $fourth-font-size;
+    }
+    h3 {
+      font-size: $triple-font-size;
+    }
+  }
+  div {
+    gap: 40px;
+    .picture-thumbnail {
+      img {
+        width: 160px;
+        height: 160px;
+      }
+      p {
+        width: 160px;
+      }
+    }
+  }
+}
