@@ -32,11 +32,11 @@ export class RulesComponent {
       picture : "../../../assets/images/bacs/compostFront03Thubmnail.jpg"
     },
     {
-      phase : "Remplissez le sceau mis à votre disposition avec l'équivalent d' 1/3 en quantité de broyat, par rapport à ce que vous venez de rendre à mère nature",
+      phase : "Remplissez le seau mis à votre disposition avec l'équivalent d' 1/3 en quantité de broyat, par rapport à ce que vous venez de rendre à mère nature",
       picture : "../../../assets/images/bacs/broyat.jpg"
     },
     {
-      phase : "Versez le broyat sur vos déchats.",
+      phase : "Versez le broyat sur vos dêchets.",
       picture : "../../../assets/images/bacs/compostFront04ThubmnailCricle.jpg"
     },
     {
