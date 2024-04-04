@@ -19,7 +19,7 @@ export class ContactFormComponent {
   firstnameValue: string = '';
   emailValue: string = '';
   phoneValue: string = '';
-  themeValue: string = 'Choisir un thème...';
+  themeValue: string = '';
   messageValue: string = '';
 
   toggleDropdown(): void{
@@ -48,8 +48,6 @@ export class ContactFormComponent {
   
   changeThemeValue(themeClicked: string) {
     this.themeValue = themeClicked;
-    console.log(this.themeValue);
-    
     this.isDropdownOpen = false;
   }
   
@@ -88,7 +86,7 @@ export class ContactFormComponent {
       this.validateEmail() &&
       this.phoneValue &&
       this.validatePhone() &&
-      this.themeValue !== '' &&
+      this.themeValue &&
       this.checkStringValidity(this.lastnameValue, 3, 255) &&
       this.checkStringValidity(this.firstnameValue, 3, 255) &&
       this.checkStringValidity(this.messageValue, 10, 1000)
