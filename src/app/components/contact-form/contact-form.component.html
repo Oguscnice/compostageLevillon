@@ -154,10 +154,11 @@
     </div>
   </fieldset>
   <input name="_formsubmit_id" type="text" style="display: none" />
-  <input value="ENVOYER"
-         [type]="checkErrors() ? 'submit' : 'button'"
-         (click)="changeSubmitted()"
-         class="btn-normal pointer submit">
+  <button [type]="checkErrors() ? 'submit' : 'button'"
+          (click)="changeSubmitted()"
+          class="btn-normal pointer submit">
+    ENVOYER
+  </button>
 </form>
 
 <app-loader [booleanVisibilityInLoarder]="isLoaderVisible"></app-loader>
