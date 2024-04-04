@@ -1,6 +1,50 @@
 @import "../../scss/variables.scss";
 
 img {
+  @include outline-picture;
   max-width: 80vw;
   max-height: 50vh;
+}
+
+.red {
+  font-size: $fourth-font-size;
+  color: $red;
+  font-weight: bolder;
+}
+
+.event {
+  width: 100%;
+  h2,
+  h3 {
+    font-weight: bolder;
+  }
+  h2 {
+    font-size: $fourth-font-size;
+  }
+  h3 {
+    font-size: $triple-font-size;
+  }
+  div {
+    img {
+      float: left;
+      width: 40vw;
+      max-width: 400px;
+      margin-right: $normal-margin;
+      margin-bottom: $normal-margin;
+    }
+    .wMax {
+      width: 100%;
+      max-width: 100%;
+      margin-right : 0px;
+      margin-bottom:  0px;
+      margin-top: $normal-margin;
+    }
+    h4 {
+      font-size: $double-font-size;
+      font-weight: bold;
+    }
+    p {
+      text-align: left;
+    }
+  }
 }
