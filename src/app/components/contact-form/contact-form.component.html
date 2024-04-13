@@ -71,7 +71,7 @@
     <div class="errors flex column" *ngIf="isFormClicked && hasErrors">
       <small *ngIf="!validateEmail()">
         Renseigner un email au bon format
-        <strong>bon format</strong>.
+        <strong>bon format</strong>
       </small>
       <small *ngIf="!emailValue">
         L'email est
@@ -116,6 +116,7 @@
         <li (click)="changeThemeValue('Demande d`informations')">Demande d'informations</li>
         <li (click)="changeThemeValue('Participation aux Projets')">Participation aux Projets</li>
         <li (click)="changeThemeValue('Inscription Newsletter')">Inscription Newsletter</li>
+        <li (click)="changeThemeValue('Désinscription Newsletter')">Désinscription Newsletter</li>
         <li (click)='changeThemeValue("Autre sujets")'>Autre sujets</li>
       </ul>
   </div>
