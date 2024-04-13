@@ -1,0 +1,39 @@
+<form id="contactform"
+      action="https://formsubmit.co/0defd2c0b85b4f4bb7d0b9a5d35691dc"
+      method="POST"
+      class="flex center column">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="text" name="_honey" style="display:none">
+  <input type="hidden" name="_subject" value="Demande de désinscription à la Newsletter !">
+  <input type="hidden" name="_next" value="https://compostagelevillon.netlify.app/formulaire-envoye">
+  <h2>Confirmez votre email</h2>
+  <fieldset>
+    <div class="container">
+      <input required=""
+            type="text"
+            name="email"
+            id="email"
+            class="input"
+            (keyup)="changeEmailValue($event)">
+      <label for="email" class="label">Email...</label>
+    </div>
+    <div class="errors flex column" *ngIf="isFormClicked && !validateEmail()">
+      <small *ngIf="!validateEmail()">
+        Renseigner un email au bon format
+        <strong>bon format</strong>
+      </small>
+      <small *ngIf="!emailValue">
+        L'email est
+        <strong>obligatoire</strong>.
+      </small>
+    </div>
+  </fieldset>
+  <input name="_formsubmit_id" type="text" style="display: none" />
+  <button [type]="validateEmail() ? 'submit' : 'button'"
+          (click)="changeSubmitted()"
+          class="btn-normal pointer submit">
+    Se désinscrire
+  </button>
+</form>
+
+<app-loader [booleanVisibilityInLoarder]="isLoaderVisible"></app-loader>

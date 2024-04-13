@@ -132,6 +132,7 @@
       <textarea placeholder="Ex. Bonjour, je voudrais des informations sur..."
                 name="message"
                 id="message"
+                [value]="messageValue ? messageValue : ''"
                 (keyup)="changeMessageValue($event)">
       </textarea>
       <label for="message" class="label">Message...</label>

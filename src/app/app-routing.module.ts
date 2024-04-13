@@ -8,6 +8,7 @@ import { ConceptComponent } from './pages/concept/concept.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { RulesComponent } from './pages/rules/rules.component';
 import { ContactFormSendComponent } from './pages/contact-form-send/contact-form-send.component';
+import { UnsubscribeNewsletterComponent } from './pages/unsubscribe-newsletter/unsubscribe-newsletter.component';
 
 const routes: Routes = [
   // {
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'page-404', component: Page404Component },
   { path: 'concept', component: ConceptComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'desinscription-newsletter', component: UnsubscribeNewsletterComponent },
   { path: 'formulaire-envoye', component: ContactFormSendComponent },
   { path: 'bonnes-pratiques', component: RulesComponent },
   { path: 'accueil', component: HomeComponent },

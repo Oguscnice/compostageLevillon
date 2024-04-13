@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LoaderComponent } from "../loader/loader.component";
 import { NgClass, NgFor, NgIf } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-contact-form',
@@ -10,6 +11,11 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
     imports: [LoaderComponent, NgFor, NgIf, NgClass]
 })
 export class ContactFormComponent {
+
+  public route = inject(ActivatedRoute);
+
+  optionalParamsTheme: string | null = null;
+
   isFormClicked: boolean = false;
   hasErrors: boolean = false;
   isLoaderVisible: boolean = false;
@@ -41,6 +47,7 @@ export class ContactFormComponent {
     this.emailValue = inputElement.value;
     this.validateEmail();
   }
+  
   changePhoneValue(event: KeyboardEvent) {
     const inputElement = event.target as HTMLInputElement;
     this.phoneValue = inputElement.value;
