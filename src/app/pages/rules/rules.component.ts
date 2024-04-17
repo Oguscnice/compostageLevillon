@@ -18,7 +18,7 @@ export class RulesComponent {
     "Je NE peux PAS jeter"
   ]
 
-  howToUse : {phase : string, picture : string}[] = [
+  howToUse : { phase : string, picture : string}[] = [
     {
       phase : "Rendez-vous au Bac n°2",
       picture : "../../../assets/images/bacs/compostFront01ThubmnailCircle.jpg"
@@ -65,7 +65,7 @@ export class RulesComponent {
       picture: "../../../assets/images/fruits-legumes/vegetables.jpg"
     },
     {
-      name: "Coquille d'oeuf",
+      name: "Coquille d'oeuf concassé",
       isMealDb: true,
       picture: "Eggs"
     },

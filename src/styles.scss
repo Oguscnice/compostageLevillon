@@ -138,6 +138,18 @@ table {
   border-spacing: 0;
 }
 
+a {
+  p {
+    margin-left: $half-margin;
+    font-weight: bold;
+    color: $black;
+  }
+  img {
+    max-width: 80px;;
+    margin-right: $half-margin;
+  }
+}
+
 /* ------ Flex Layouts ------ */
 .flex {
   display: flex;

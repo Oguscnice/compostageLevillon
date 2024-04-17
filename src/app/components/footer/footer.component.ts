@@ -3,7 +3,14 @@ import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
-  template: ` <footer class="flex center" #footer>
+  template: ` <footer class="flex center space-around" #footer>
+                <i class="fa-solid fa-leaf" [routerLink]="'/'"></i>
+                <a class="flex center"
+                   href="../assets/Guide_compostage.pdf"
+                   download="Guide_compostage.pdf">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <p>Guide du Compostage (PDF)</p>
+                </a>
                 <i class="fa-solid fa-envelope" [routerLink]="'/contact'"></i>
               </footer>`,
   styles: [`
